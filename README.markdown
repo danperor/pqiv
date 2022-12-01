@@ -1,11 +1,13 @@
 PQIV README
 ===========
 # write first
-this repo support the click through and always above feature，
-see:https://github.com/phillipberndt/pqiv/pull/131
+This repo support the click through and always above feature，
+see
+ * [The submission from @mortoray](https://github.com/phillipberndt/pqiv/pull/131)
 
-and:
-https://askubuntu.com/questions/1061487/overlay-translucent-image-on-desktop-above-all-windows
+
+ * [Discuss from askubuntu](https://askubuntu.com/questions/1061487/overlay-translucent-image-on-desktop-above-all-windows)
+
 __________________________
 About pqiv
 ----------
