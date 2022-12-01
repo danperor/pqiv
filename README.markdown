@@ -1,6 +1,12 @@
 PQIV README
 ===========
+# write first
+this repo support the click through and always above feature，
+see:https://github.com/phillipberndt/pqiv/pull/131
 
+and:
+https://askubuntu.com/questions/1061487/overlay-translucent-image-on-desktop-above-all-windows
+__________________________
 About pqiv
 ----------
 
@@ -15,7 +21,6 @@ filters, marks, image preloading, and much more.
 
 pqiv started as a Python rewrite of qiv avoiding imlib, but evolved into a much
 more powerful tool. Today, pqiv stands for powerful quick image viewer.
-
 Features
 --------
 
