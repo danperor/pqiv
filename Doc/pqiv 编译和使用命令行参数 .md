@@ -14,3 +14,19 @@ collect2: error: ld returned 1 exit status
 pqiv --click-through --transparent-background --hide-info-box --keep-above  alphatest.png 
 ### Wayland下报错的话使用如下配置：
 GDK_BACKEND=x11 pqiv --click-through --transparent-background --hide-info-box --keep-above  alphatest.png 
+## pqiv 执行的时候报权限不足的问题
+ 将pqiv拷贝到制定目录之后，要给pqiv执行权限
+ ```
+ chmod +x pqiv
+ ```
+ ## pqiv添加不在任务栏显示程序图标功能
+ 2个函数；
+ gtk_window_set_skip_taskbar
+
+ ```
+ void
+gtk_window_set_skip_taskbar_hint (
+  GtkWindow* window,
+  gboolean setting
+)
+ ```

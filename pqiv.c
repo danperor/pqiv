@@ -312,6 +312,7 @@ gboolean option_enforce_window_aspect_ratio = FALSE;
 gboolean cursor_visible = TRUE;
 gboolean cursor_auto_hide_mode_enabled = FALSE;
 gboolean option_negate = FALSE;
+gboolean option_skip_taskbar = FALSE;
 int cursor_auto_hide_timer_id = 0;
 #ifndef CONFIGURED_WITHOUT_ACTIONS
 gboolean option_actions_from_stdin = FALSE;
@@ -396,6 +397,7 @@ PQIV_DISABLE_PEDANTIC
 // Hint: Only types G_OPTION_ARG_NONE, G_OPTION_ARG_STRING, G_OPTION_ARG_DOUBLE/INTEGER and G_OPTION_ARG_CALLBACK are
 // implemented for option parsing.
 GOptionEntry options[] = {
+	{ "skip-taskbar", 0,0, G_OPTION_ARG_NONE, &option_skip_taskbar, "Set desktop environment not to display the window in the task bar", NULL },
 	{ "transparent-background", 'c', 0, G_OPTION_ARG_NONE, &option_transparent_background, "Borderless transparent window", NULL },
 	{ "keep-above", 0,0, G_OPTION_ARG_NONE, &option_keep_above, "Keep window above others", NULL },
 	{ "slideshow-interval", 'd', 0, G_OPTION_ARG_DOUBLE, &option_slideshow_interval, "Set slideshow interval", "n" },
@@ -6765,6 +6767,9 @@ gboolean window_configure_callback(GtkWidget *widget, GdkEventConfigure *event, 
 	
 	if(option_keep_above) {
 		gtk_window_set_keep_above(main_window, TRUE);
+	}
+	if(option_skip_taskbar){
+		gtk_window_set_skip_taskbar_hint(main_window, TRUE);
 	}
 	return FALSE;
 }/*}}}*/
