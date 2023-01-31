@@ -1,6 +1,29 @@
 ## 编译时需要安装以下库
-sudo apt-get install libgtkd-3-dev
+```
 apt-cache search libgtk
+sudo apt-get install libgtkd-3-dev
+sudo apt-get install libgtk-3-dev
+```
+### 解决安装特定库时报未满足的依赖关系错误
+```
+下列软件包有未满足的依赖关系：
+ libgtk-3-dev : 依赖: libgtk-3-0 (= 3.22.5.2+4nfs4) 但是 3.22.5.2+4nfs6 正要被安装
+                依赖: gir1.2-gtk-3.0 (= 3.22.5.2+4nfs4) 但是 3.22.5.2+4nfs6 正要被安装
+
+```
+解决办法：
+
+• 什么冲突安装什么
+
+1）.错误中出现 >=的情形，直接安装这个软件。
+2).错误中出现了=，就直接安装这个特定版本
+```
+sudo apt install libgtk-3-0=3.22.5.2+4nfs4
+sudo apt install  gir1.2-gtk-3.0=3.22.5.2+4nfs4
+```
+3).最后再回头安装目标软件
+先安装特定版本的库：libgtk-3-0和gir1.2-gtk-3.0
+
 ## 编译错误解决：
 报错：
 对‘gdk_x11_window_get_xid’未定义的引用
