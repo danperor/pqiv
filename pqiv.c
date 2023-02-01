@@ -7316,7 +7316,7 @@ void create_window() { /*{{{*/
 	#endif
 
 	main_window = GTK_WINDOW(gtk_window_new(GTK_WINDOW_TOPLEVEL));
-	gtk_window_set_type_hint(main_window,GDK_WINDOW_TYPE_HINT_DESKTOP);
+	gtk_window_set_type_hint(main_window,GDK_WINDOW_TYPE_HINT_UTILITY);
 
 	g_signal_connect(main_window, "destroy", G_CALLBACK(window_close_callback), NULL);
 	#if GTK_MAJOR_VERSION < 3

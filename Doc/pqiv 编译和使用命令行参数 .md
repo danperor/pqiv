@@ -53,3 +53,47 @@ gtk_window_set_skip_taskbar_hint (
   gboolean setting
 )
  ```
+ ## pqiv 编译过程中，git窗口的几种类型
+ ```
+ GDK_WINDOW_TYPE_HINT_NORMAL	---可以穿透和最上，但显示在任务栏中
+Normal toplevel window.
+
+GDK_WINDOW_TYPE_HINT_DIALOG	 ---可以穿透和最上，不会现在在任务栏中，但右键弹出的菜单会遮盖
+Dialog window.
+
+GDK_WINDOW_TYPE_HINT_MENU	   ---可以穿透和最上，不会现在在任务栏中，但右键弹出的菜单会遮盖
+Window used to implement a menu; GTK+ uses this hint only for torn-off menus, see GtkTearoffMenuItem.
+
+GDK_WINDOW_TYPE_HINT_TOOLBAR	---可以穿透和最上，不会现在在任务栏中，但右键弹出的菜单会遮盖
+Window used to implement toolbars.
+
+GDK_WINDOW_TYPE_HINT_SPLASHSCREEN	
+Window used to display a splash screen during application startup.
+
+GDK_WINDOW_TYPE_HINT_UTILITY	
+Utility windows which are not detached toolbars or dialogs.
+
+GDK_WINDOW_TYPE_HINT_DOCK	
+Used for creating dock or panel windows.
+
+GDK_WINDOW_TYPE_HINT_DESKTOP	---不可以在最上
+Used for creating the desktop background window.
+
+GDK_WINDOW_TYPE_HINT_DROPDOWN_MENU	
+A menu that belongs to a menubar.
+
+GDK_WINDOW_TYPE_HINT_POPUP_MENU	
+A menu that does not belong to a menubar, e.g. a context menu.
+
+GDK_WINDOW_TYPE_HINT_TOOLTIP	
+A tooltip.
+
+GDK_WINDOW_TYPE_HINT_NOTIFICATION	
+A notification - typically a “bubble” that belongs to a status icon.
+
+GDK_WINDOW_TYPE_HINT_COMBO	
+A popup from a combo box.
+
+GDK_WINDOW_TYPE_HINT_DND	
+A window that is used to implement a DND cursor.
+ ```
