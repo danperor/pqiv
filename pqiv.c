@@ -6769,7 +6769,6 @@ gboolean window_configure_callback(GtkWidget *widget, GdkEventConfigure *event, 
 		gtk_window_set_keep_above(main_window, TRUE);
 	}
 	if(option_skip_taskbar){
-		gtk_window_set_type_hint(main_window,GDK_WINDOW_TYPE_HINT_DESKTOP);
 		gtk_window_set_skip_taskbar_hint(main_window, TRUE);
 		gtk_window_set_skip_pager_hint(main_window,TRUE);
 	}
@@ -7317,6 +7316,7 @@ void create_window() { /*{{{*/
 	#endif
 
 	main_window = GTK_WINDOW(gtk_window_new(GTK_WINDOW_TOPLEVEL));
+	gtk_window_set_type_hint(main_window,GDK_WINDOW_TYPE_HINT_DESKTOP);
 
 	g_signal_connect(main_window, "destroy", G_CALLBACK(window_close_callback), NULL);
 	#if GTK_MAJOR_VERSION < 3
